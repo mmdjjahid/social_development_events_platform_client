@@ -49,7 +49,7 @@ const NavBar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Social Events</a>
+          <Link to={"/"} className="btn btn-ghost text-xl">Social Events</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -78,7 +78,7 @@ const NavBar = () => {
             >
               
               <li>
-                <Link>Create Event</Link>
+                <Link to={"/createEvent"}>Create Event</Link>
               </li>
               <li>
                 <Link>Manage Events</Link>
