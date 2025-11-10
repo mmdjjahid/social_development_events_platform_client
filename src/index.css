@@ -7,3 +7,62 @@
  body{
   font-family: "Nunito", sans-serif;
  }
+
+
+ .btn-primary {
+  @apply rounded-lg bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-white shadow-md transition-all duration-300 ease-in-out;
+}
+
+.btn-primary:hover {
+  @apply bg-blue-700 shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-primary:focus {
+  @apply outline-none ring-4 ring-blue-300;
+}
+
+.btn-secondary {
+  @apply rounded-lg border-2 border-blue-600 bg-transparent px-5 py-2.5 text-center text-sm font-medium text-blue-600 shadow-sm transition-all duration-300 ease-in-out;
+}
+
+.btn-secondary:hover {
+  @apply bg-blue-600 text-white shadow-md transform hover:-translate-y-0.5;
+}
+
+.btn-secondary:focus {
+  @apply outline-none ring-4 ring-blue-300;
+}
+
+.btn-delete {
+  @apply rounded-lg bg-red-600 px-5 py-2.5 text-center text-sm font-medium text-white shadow-md transition-all duration-300 ease-in-out;
+}
+
+.btn-delete:hover {
+  @apply bg-red-700 shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-delete:focus {
+  @apply outline-none ring-4 ring-red-300;
+}
+
+
+.heading-banner {
+  @apply text-4xl font-extrabold tracking-tight text-base-content 
+         sm:text-5xl 
+         lg:text-6xl;
+}
+
+.heading-text {
+  @apply mt-4 text-lg leading-relaxed text-base-content/80 md:text-xl max-w-3xl mx-auto;
+}
+
+.heading-section {
+  @apply text-3xl font-bold text-base-content 
+         sm:text-4xl
+         border-b-4 border-primary 
+         pb-2 w-fit mx-auto;
+}
+
+.text-body {
+  @apply text-base leading-relaxed text-base-content/80; /* 80% opacity */
+}

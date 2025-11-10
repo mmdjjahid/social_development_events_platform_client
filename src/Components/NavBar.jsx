@@ -21,7 +21,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className=" bg-base-100 shadow-sm ">
+    <div className="z-10 bg-base-100 shadow-sm ">
       <nav className="navbar w-11/12 mx-auto my-0">
         <div className="navbar-start">
           <div className="dropdown">
@@ -92,7 +92,7 @@ const NavBar = () => {
             </ul>
           </div>
           :
-          <Link to={"/login"} className="btn">Login</Link>
+          <Link to={"/login"} className="btn-primary">Login</Link>
 }        </div>
       </nav>
     </div>

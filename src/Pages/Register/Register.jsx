@@ -179,7 +179,7 @@ const Register = () => {
           </>
         )}
 
-        <button className="w-full btn btn-neutral mt-4">Sign Up</button>
+        <button className="btn-primary w-full mt-3">Sign Up</button>
 
         </form>
 

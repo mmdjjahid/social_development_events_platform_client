@@ -85,7 +85,7 @@ const Login = () => {
             required
           />
 
-          <button className="w-full btn btn-neutral mt-4">Login</button>
+          <button className="btn-primary w-full mt-3">Login</button>
         </form>
 
         <div className="divider">OR</div>
