@@ -1,8 +1,18 @@
-import React from "react";
-import { Link, NavLink } from "react-router";
+import React, { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router";
 import avatar from "../assets/Avatar.png"
+import { AuthContext } from "../Context/CreateContext";
 
 const NavBar = () => {
+    const {user,logOut, setUser, loading} = useContext(AuthContext)
+    const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await logOut();
+    setUser("");
+    navigate("/");
+  };
+    console.log(user)
   const links = (
     <>
       <li>
@@ -45,6 +55,8 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-3">
+            {loading ? <span className="loading loading-spinner loading-xl"></span>:
+            user ?
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -54,31 +66,33 @@ const NavBar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src={avatar}
+                  src={user.photoURL ? user.photoURL : avatar}
                 />
               </div>
             </div>
             <ul
               tabIndex="-1"
-              className=" hidden menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className=" menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               
             >
+              
               <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
+                <Link>Create Event</Link>
               </li>
               <li>
-                <a>Settings</a>
+                <Link>Manage Events</Link>
               </li>
               <li>
-                <a>Logout</a>
+                <Link>Joined Events</Link>
+              </li>
+              <li>
+                <button onClick={handleLogout}>Logout</button>
               </li>
             </ul>
           </div>
+          :
           <Link to={"/login"} className="btn">Login</Link>
-        </div>
+}        </div>
       </nav>
     </div>
   );
