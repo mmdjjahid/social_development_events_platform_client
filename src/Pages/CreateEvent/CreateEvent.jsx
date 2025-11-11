@@ -1,18 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState} from "react";
 import DatePicker from "react-datepicker";
-
+import {useNavigate } from "react-router";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Context/CreateContext";
+import axiosInstance from "../../../Axios/AxiosInstance";
+import { toast } from "react-toastify";
 
 const CreateEvent = () => {
   const [eventDate, setEventDate] = useState(new Date());
-
-  const {user} = useContext(AuthContext)
+  const { user, setLoading } = useContext(AuthContext);
+  const navigate = useNavigate();
   const userEmail = user.email
 
-  const handleCreateEvent = (e)=>{
+  const handleCreateEvent = async (e)=>{
     e.preventDefault();
-
+    setLoading(true)
     const title = e.target.title.value;
     const thumbnail = e.target.thumbnail.value;
     const eventType = e.target.eventType.value;
@@ -29,6 +31,24 @@ const CreateEvent = () => {
       userEmail,
     };
     console.log(newEvent)
+    try {
+      const response = await axiosInstance.post('/events', newEvent);
+      
+      if (response.data.insertedId) {
+        toast.success("Event Created Successfully!");
+        navigate("/upcoming-events");
+      } else {
+        toast.error("Failed to create event. Please try again.");
+      }
+
+    } catch (error) {
+      // console.error("Create event error:", error);
+      toast.error(error.message || "An error occurred.");
+    } finally {
+      setLoading(false);
+    }
+
+
   }
   return (
     <div className="bg-base-200 py-20">

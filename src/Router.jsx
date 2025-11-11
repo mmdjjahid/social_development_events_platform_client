@@ -5,6 +5,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import CreateEvent from "./Pages/CreateEvent/CreateEvent";
 import PrivateRoute from "./PrivateRoute";
+import UpcomingEvents from "./Pages/UpcomingEvents/UpcomingEvents";
 
 const router = createBrowserRouter([
   {
@@ -17,9 +18,17 @@ const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path:"/createEvent",
-        element:<PrivateRoute><CreateEvent></CreateEvent></PrivateRoute>
-      }
+        path: "/createEvent",
+        element: (
+          <PrivateRoute>
+            <CreateEvent></CreateEvent>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/upcoming-events",
+        element: <UpcomingEvents></UpcomingEvents>,
+      },
     ],
   },
   {
