@@ -12,7 +12,7 @@ const NavBar = () => {
     setUser("");
     navigate("/");
   };
-    console.log(user)
+    // console.log(user)
   const links = (
     <>
       <li>

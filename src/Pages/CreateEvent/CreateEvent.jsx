@@ -10,7 +10,7 @@ const CreateEvent = () => {
   const [eventDate, setEventDate] = useState(new Date());
   const { user, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
-  const userEmail = user.email
+  const creatorEmail = user.email
 
   const handleCreateEvent = async (e)=>{
     e.preventDefault();
@@ -28,7 +28,7 @@ const CreateEvent = () => {
       location,
       description,
       eventDate,
-      userEmail,
+      creatorEmail,
     };
     console.log(newEvent)
     try {
