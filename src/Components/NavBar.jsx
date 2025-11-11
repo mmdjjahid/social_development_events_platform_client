@@ -12,7 +12,7 @@ const NavBar = () => {
     setUser("");
     navigate("/");
   };
-    // console.log(user)
+    console.log(user)
   const links = (
     <>
       <li>
@@ -81,10 +81,10 @@ const NavBar = () => {
                 <Link to={"/createEvent"}>Create Event</Link>
               </li>
               <li>
-                <Link>Manage Events</Link>
+                <Link to={`/manage-events/${user.email}`}>Manage Events</Link>
               </li>
               <li>
-                <Link>Joined Events</Link>
+                <Link to={`/joined-events/${user.email}`}>Joined Events</Link>
               </li>
               <li>
                 <button onClick={handleLogout}>Logout</button>
