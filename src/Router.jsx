@@ -9,6 +9,7 @@ import UpcomingEvents from "./Pages/UpcomingEvents/UpcomingEvents";
 import EventDetails from "./Components/EventDetails";
 import JoinedEvents from "./Pages/JoinedEvents/JoinedEvents";
 import ManageEvents from "./Pages/ManageEvents";
+import UpdateEvent from "./Components/UpdateEvent";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ManageEvents></ManageEvents>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-event/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateEvent></UpdateEvent>
           </PrivateRoute>
         ),
       },
