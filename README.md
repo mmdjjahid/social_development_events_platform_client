@@ -1,16 +1,39 @@
-# React + Vite
+# Social Development Events Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Live Demo
 
-## React Compiler
+* **Client:** [http://103.134.26.92/](http://103.134.26.92/)
+* **Server:** [http://103.134.26.92:3010](http://103.134.26.92:3010)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Features
 
-## Expanding the ESLint configuration
+* **User Authentication:** Secure user registration and login.
+* **Event Creation:** Logged-in users can create new social events, providing details like title, description, date, location, and type.
+* **Upcoming Events:** A public page showcasing all future events in a responsive card layout.
+* **Event Details:** A dedicated page for each event with detailed information and a "Join" button.
+* **Search & Filter:** Users can search for events by title and filter by event type (e.g., "Cleanup", "Plantation").
+* **Joined Events Dashboard:** A private page where users can see all the events they have registered for.
+* **Event Management Dashboard:** A private page for users to **Manage** their *own* created events.
+    * **Update:** Edit event details through a pre-populated form.
+    * **Delete:** Remove their own events from the platform.
+* **Responsive & Themed:** Fully responsive design with dark/light mode support using Tailwind CSS and daisyUI.
+* **404 Page:** A custom "Not Found" page for a better user experience.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technology Stack
+
+### Client (Frontend)
+
+* **Framework:** React (Vite)
+* **Routing:** React Router
+* **Styling:** Tailwind CSS & daisyUI
+* **Data Fetching:** Axios
+* **Notifications:** React Toastify
+* **Animations:** Framer Motion
+
+### Server (Backend)
+
+* **Framework:** Node.js & Express.js
+* **Database:** MongoDB (with MongoDB Driver)
+* **Middleware:** CORS, Dotenv
