@@ -1,11 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import avatar from "../assets/Avatar.png"
 import { AuthContext } from "../Context/CreateContext";
+import Loading from "./Loading";
 
 const NavBar = () => {
     const {user,logOut, setUser, loading} = useContext(AuthContext)
     const navigate = useNavigate();
+
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
+
+  useEffect(() => {
+    const html = document.querySelector('html')
+     html.setAttribute("data-theme", theme)
+     localStorage.setItem("theme", theme)
+  }, [theme])
+
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark": "light")
+  }
 
   const handleLogout = async () => {
     await logOut();
@@ -55,7 +69,12 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end gap-3">
-            {loading ? <span className="loading loading-spinner loading-xl"></span>:
+          <input
+           onChange={(e)=> handleTheme(e.target.checked)}
+           type="checkbox"
+           defaultChecked={localStorage.getItem('theme') === "dark"}
+           className="toggle"/>
+            {loading ? <Loading></Loading>:
             user ?
           <div className="dropdown dropdown-end">
             <div

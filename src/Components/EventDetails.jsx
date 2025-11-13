@@ -6,6 +6,7 @@ import { AuthContext } from "../Context/CreateContext";
 import { FaMapMarkerAlt, FaCalendarAlt, FaUser } from "react-icons/fa";
 import axiosInstance from "../Axios/AxiosInstance";
 import NotFoundPage from "../Pages/NotFoundPage";
+import Loading from "./Loading";
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -85,11 +86,7 @@ if (!event){
     <div className="bg-base-200 py-20">
       <div className="container mx-auto max-w-6xl px-6">
         <div className="bg-base-100 shadow-xl rounded-lg overflow-hidden">
-          {loading ? (
-            <div className="flex justify-center items-center h-screen">
-              <span className="loading loading-spinner loading-lg"></span>
-            </div>
-          ) :  (
+          {loading ? <Loading></Loading> :  (
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="h-64 md:h-80 lg:h-full">
                 <img

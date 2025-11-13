@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <div className="flex items-center justify-center min-h-[70vh] bg-base-200 px-6 py-20">
       <div className="text-center">
-        <h1 className="text-9xl font-extrabold text-primary animate-pulse">
+        <h1 className="text-9xl font-extrabold text-primary">
           404
         </h1>
 
