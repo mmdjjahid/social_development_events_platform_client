@@ -21,7 +21,7 @@
 * **Responsive & Themed:** Fully responsive design with dark/light mode support using Tailwind CSS and daisyUI.
 * **404 Page:** A custom "Not Found" page for a better user experience.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Client (Frontend)
 
