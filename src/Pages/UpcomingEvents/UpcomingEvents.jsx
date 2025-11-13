@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axiosInstance from '../../../Axios/AxiosInstance';
 import EventCard from '../../Components/EventCard';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/CreateContext';
+import axiosInstance from '../../Axios/AxiosInstance';
+
 
 
 const UpcomingEvents = () => {

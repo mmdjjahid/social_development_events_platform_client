@@ -3,8 +3,8 @@ import DatePicker from "react-datepicker";
 import {useNavigate } from "react-router";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../Context/CreateContext";
-import axiosInstance from "../../../Axios/AxiosInstance";
 import { toast } from "react-toastify";
+import axiosInstance from "../../Axios/AxiosInstance";
 
 const CreateEvent = () => {
   const [eventDate, setEventDate] = useState(new Date());

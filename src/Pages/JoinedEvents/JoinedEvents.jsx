@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router";
 import { AuthContext } from "../../Context/CreateContext";
-import axiosInstance from "../../../Axios/AxiosInstance";
+import axiosInstance from "../../Axios/AxiosInstance";
 
 const JoinedEvents = () => {
   const { user, loading } = useContext(AuthContext);

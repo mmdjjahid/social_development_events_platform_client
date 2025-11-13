@@ -10,6 +10,7 @@ import EventDetails from "./Components/EventDetails";
 import JoinedEvents from "./Pages/JoinedEvents/JoinedEvents";
 import ManageEvents from "./Pages/ManageEvents";
 import UpdateEvent from "./Components/UpdateEvent";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/events/:id",
         element: <EventDetails></EventDetails>,
+        errorElement: <NotFoundPage></NotFoundPage>
       },
       {
         path: "/upcoming-events",
@@ -44,6 +46,7 @@ const router = createBrowserRouter([
             <JoinedEvents></JoinedEvents>
           </PrivateRoute>
         ),
+        errorElement: <NotFoundPage></NotFoundPage>
       },
       {
         path: "/manage-events/:email",
@@ -71,6 +74,10 @@ const router = createBrowserRouter([
     path: "/register",
     Component: Register,
   },
+  {
+    path: "*",
+    Component: NotFoundPage
+  }
 ]);
 
 export default router;

@@ -2,8 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Context/CreateContext";
-import axiosInstance from "../../Axios/AxiosInstance";
+
 import { FaMapMarkerAlt, FaCalendarAlt, FaUser } from "react-icons/fa";
+import axiosInstance from "../Axios/AxiosInstance";
+import NotFoundPage from "../Pages/NotFoundPage";
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -68,9 +70,7 @@ const EventDetails = () => {
     );
   }
 if (!event){
-   return <div className="flex justify-center items-center h-screen">
-              <h2 className="text-2xl">Event not found.</h2>
-            </div>
+   return <NotFoundPage></NotFoundPage>
 }
   const formattedDate = new Date(event.eventDate).toLocaleDateString("en-US", {
     year: "numeric",
